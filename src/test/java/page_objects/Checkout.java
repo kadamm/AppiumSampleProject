@@ -1,5 +1,6 @@
 package page_objects;
 
+import helpers.MobileHelper;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
@@ -7,12 +8,16 @@ import io.appium.java_client.pagefactory.iOSXCUITFindBy;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 
+import java.time.Duration;
+
 public class Checkout {
 
     private AppiumDriver driver;
+    private MobileHelper mobileHelper;
     public Checkout(AppiumDriver driver) {
         this.driver = driver;
-        PageFactory.initElements(new AppiumFieldDecorator(this.driver), this);
+        PageFactory.initElements(new AppiumFieldDecorator(this.driver, Duration.ofSeconds(10)), this);
+        this.mobileHelper = new MobileHelper(this.driver, 10);
     }
 
     @AndroidFindBy(accessibility = "Full Name* input field")
@@ -48,6 +53,7 @@ public class Checkout {
     private WebElement toPaymentButton;
 
     public void enterFullName(String fullName) {
+        this.mobileHelper.waitForElementToVisible(this.fullNameInputField);
         this.fullNameInputField.sendKeys(fullName);
     }
 

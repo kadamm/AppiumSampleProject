@@ -7,12 +7,14 @@ import io.appium.java_client.pagefactory.iOSXCUITFindBy;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 
+import java.time.Duration;
+
 public class SuccessScreen {
 
     private AppiumDriver driver;
     public SuccessScreen(AppiumDriver driver) {
         this.driver = driver;
-        PageFactory.initElements(new AppiumFieldDecorator(this.driver), this);
+        PageFactory.initElements(new AppiumFieldDecorator(this.driver, Duration.ofSeconds(10)), this);
     }
 
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='Checkout Complete']")

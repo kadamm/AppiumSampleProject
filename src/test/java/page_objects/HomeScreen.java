@@ -8,12 +8,14 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 
+import java.time.Duration;
+
 public class HomeScreen {
 
     private AppiumDriver driver;
     public HomeScreen(AppiumDriver driver) {
         this.driver = driver;
-        PageFactory.initElements(new AppiumFieldDecorator(this.driver), this);
+        PageFactory.initElements(new AppiumFieldDecorator(this.driver, Duration.ofSeconds(10)), this);
     }
 
     @AndroidFindBy(xpath = "//*[@text='Sauce Labs Backpack']")

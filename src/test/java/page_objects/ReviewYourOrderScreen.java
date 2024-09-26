@@ -7,12 +7,14 @@ import io.appium.java_client.pagefactory.iOSXCUITFindBy;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 
+import java.time.Duration;
+
 public class ReviewYourOrderScreen {
 
     private AppiumDriver driver;
     public ReviewYourOrderScreen(AppiumDriver driver) {
         this.driver = driver;
-        PageFactory.initElements(new AppiumFieldDecorator(this.driver), this);
+        PageFactory.initElements(new AppiumFieldDecorator(this.driver, Duration.ofSeconds(10)), this);
     }
 
     @AndroidFindBy(accessibility = "product label")
