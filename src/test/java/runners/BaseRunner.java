@@ -18,7 +18,6 @@ public class BaseRunner extends AbstractTestNGCucumberTests {
     public BaseRunner() {
         this.localDriverManager = new LocalDriverManager();
         this.readPropertiesFiles = new ReadPropertiesFiles();
-
     }
 
     @Override
