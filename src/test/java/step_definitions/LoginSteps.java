@@ -27,8 +27,4 @@ public class LoginSteps {
         this.loginScreen.enterPassword(readPropertiesFiles.getConfigurationProperty("password"));
         this.loginScreen.tapSignInButton();
     }
-
-    @Given("I am printing message")
-    public void iAmPrintingMessage() {
-    }
 }
