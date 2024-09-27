@@ -20,23 +20,23 @@ public class PaymentMethodScreen {
     }
 
     @AndroidFindBy(accessibility = "Full Name* input field")
-    @iOSXCUITFindBy(id = "TBU")
+    @iOSXCUITFindBy(id = "Full Name* input field")
     private WebElement fullNameInputField;
 
     @AndroidFindBy(accessibility = "Card Number* input field")
-    @iOSXCUITFindBy(id = "TBU")
+    @iOSXCUITFindBy(id = "Card Number* input field")
     private WebElement cardNumberInputField;
 
     @AndroidFindBy(accessibility = "Expiration Date* input field")
-    @iOSXCUITFindBy(id = "TBU")
+    @iOSXCUITFindBy(id = "Expiration Date* input field")
     private WebElement expiryDateInputField;
 
     @AndroidFindBy(accessibility = "Security Code* input field")
-    @iOSXCUITFindBy(id = "TBU")
+    @iOSXCUITFindBy(id = "Security Code* input field")
     private WebElement secureCodeInputField;
 
     @AndroidFindBy(accessibility = "Review Order button")
-    @iOSXCUITFindBy(id = "TBU")
+    @iOSXCUITFindBy(id = "Review Order button")
     private WebElement reviewOrderButton;
 
 

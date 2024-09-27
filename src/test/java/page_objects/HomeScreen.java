@@ -22,43 +22,43 @@ public class HomeScreen {
     }
 
     @AndroidFindBy(xpath = "//*[@text='Sauce Labs Backpack']")
-    @iOSXCUITFindBy(xpath = "//*[@label='Sauce Labs Backpack']")
+    @iOSXCUITFindBy(xpath = "//*[@name='Sauce Labs Backpack']")
     private WebElement backPackProduct;
 
     @AndroidFindBy(accessibility = "open menu")
-    @iOSXCUITFindBy(xpath = "//*[@label='Sauce Labs Backpack']")
+    @iOSXCUITFindBy(id = "tab bar option menu")
     private WebElement openMenu;
 
     @AndroidFindBy(accessibility = "menu item log out")
-    @iOSXCUITFindBy(xpath = "//*[@label='Sauce Labs Backpack']")
+    @iOSXCUITFindBy(id = "menu item log out")
     private WebElement logoutButton;
 
     @AndroidFindBy(xpath = "//*[@resource-id='android:id/button1']")
-    @iOSXCUITFindBy(xpath = "//*[@label='Sauce Labs Backpack']")
+    @iOSXCUITFindBy(xpath = "//XCUIElementTypeButton[@name='Log Out']")
     private WebElement logoutConfirmationButton;
 
     @AndroidFindBy(xpath = "//*[@resource-id='android:id/button1']")
-    @iOSXCUITFindBy(xpath = "//*[@label='Sauce Labs Backpack']")
+    @iOSXCUITFindBy(xpath = "//XCUIElementTypeButton[@name='OK']")
     private WebElement dismissSuccessAlertButton;
 
     @AndroidFindBy(accessibility = "Add To Cart button")
-    @iOSXCUITFindBy(xpath = "//*[@label='Sauce Labs Backpack']")
+    @iOSXCUITFindBy(id = "Add To Cart button")
     private WebElement addToCartButton;
 
     @AndroidFindBy(accessibility = "cart badge")
-    @iOSXCUITFindBy(xpath = "//*[@label='Sauce Labs Backpack']")
+    @iOSXCUITFindBy(id = "tab bar option cart")
     private WebElement cartButton;
 
     @AndroidFindBy(accessibility = "Proceed To Checkout button")
-    @iOSXCUITFindBy(xpath = "//*[@label='Sauce Labs Backpack']")
+    @iOSXCUITFindBy(id = "Proceed To Checkout button")
     private WebElement proceedToCheckOutButton;
 
     @AndroidFindBy(accessibility = "product label")
-    @iOSXCUITFindBy(xpath = "//*[@label='Sauce Labs Backpack']")
+    @iOSXCUITFindBy(id = "product label")
     private WebElement myCartProductName;
 
     @AndroidFindBy(accessibility = "menu item catalog")
-    @iOSXCUITFindBy(xpath = "//*[@label='Sauce Labs Backpack']")
+    @iOSXCUITFindBy(id = "tab bar option catalog")
     private WebElement catalog;
 
     public void tapOnProduct(String productName) {
@@ -80,8 +80,10 @@ public class HomeScreen {
     }
 
     public void navigateToProductScreen() {
-        this.mobileHelper.waitForElementToVisible(this.openMenu);
-        this.openMenu.click();
+        if (this.driver.getCapabilities().getPlatformName().toString().equalsIgnoreCase("Android")) {
+            this.mobileHelper.waitForElementToVisible(this.openMenu);
+            this.openMenu.click();
+        }
         this.mobileHelper.waitForElementToVisible(this.catalog);
         this.catalog.click();
     }
@@ -89,7 +91,9 @@ public class HomeScreen {
     public void logoutFromTheApp() {
         this.openMenu.click();
         this.logoutButton.click();
+        this.mobileHelper.waitForElementToVisible(this.logoutConfirmationButton);
         this.logoutConfirmationButton.click();
+        this.mobileHelper.waitForElementToVisible(this.dismissSuccessAlertButton);
         this.dismissSuccessAlertButton.click();
     }
 
