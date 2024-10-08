@@ -18,15 +18,15 @@ public class ReviewYourOrderScreen {
     }
 
     @AndroidFindBy(accessibility = "product label")
-    @iOSXCUITFindBy(id = "TBU")
+    @iOSXCUITFindBy(id = "product label")
     private WebElement productName;
 
     @AndroidFindBy(accessibility = "product price")
-    @iOSXCUITFindBy(id = "TBU")
+    @iOSXCUITFindBy(id = "product price")
     private WebElement productPrice;
 
     @AndroidFindBy(xpath = "//*[@content-desc='checkout delivery address']/child::android.widget.TextView[3]")
-    @iOSXCUITFindBy(id = "TBU")
+    @iOSXCUITFindBy(id = "//*[@label='Delivery Address']/child::android.widget.TextView[3]")
     private WebElement addressLine1;
     @AndroidFindBy(xpath = "//*[@content-desc='checkout delivery address']/child::android.widget.TextView[4]")
     @iOSXCUITFindBy(id = "TBU")

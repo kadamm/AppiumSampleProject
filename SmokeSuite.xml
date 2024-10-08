@@ -5,9 +5,9 @@
         <listener class-name="cucumber_helpers.CucumberReport"></listener>
     </listeners>
     <test name="Test">
-        <parameter name="platformName" value="Android"/>
-        <parameter name="deviceName" value="eae4c4ab"/>
-        <parameter name="platformVersion" value="10.0"/>
+        <parameter name="platformName" value="iOS"/>
+        <parameter name="deviceName" value="iPhone 15 Pro"/>
+        <parameter name="platformVersion" value="17.5"/>
         <classes>
             <class name="runners.RegressionRunner"/>
         </classes>

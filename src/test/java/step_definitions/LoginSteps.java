@@ -22,7 +22,7 @@ public class LoginSteps {
     }
 
     @When("I am login into the application with valid credentials")
-    public void IAmOnHomeScreenByLoginWithValidCredentials(){
+    public void IAmOnHomeScreenByLoginWithValidCredentials() throws InterruptedException {
         this.loginScreen.enterEmail(readPropertiesFiles.getConfigurationProperty("username"));
         this.loginScreen.enterPassword(readPropertiesFiles.getConfigurationProperty("password"));
         this.loginScreen.tapSignInButton();

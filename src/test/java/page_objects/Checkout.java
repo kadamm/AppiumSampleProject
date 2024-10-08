@@ -21,35 +21,35 @@ public class Checkout {
     }
 
     @AndroidFindBy(accessibility = "Full Name* input field")
-    @iOSXCUITFindBy(id = "TBU")
+    @iOSXCUITFindBy(id = "Full Name* input field")
     private WebElement fullNameInputField;
 
     @AndroidFindBy(accessibility = "Address Line 1* input field")
-    @iOSXCUITFindBy(id = "TBU")
+    @iOSXCUITFindBy(id = "Address Line 1* input field")
     private WebElement addressLine1InputField;
 
     @AndroidFindBy(accessibility = "Address Line 2 input field")
-    @iOSXCUITFindBy(id = "TBU")
+    @iOSXCUITFindBy(id = "Address Line 2 input field")
     private WebElement addressLine2InputField;
 
     @AndroidFindBy(accessibility = "City* input field")
-    @iOSXCUITFindBy(id = "TBU")
+    @iOSXCUITFindBy(id = "City* input field")
     private WebElement cityInputField;
 
     @AndroidFindBy(accessibility = "State/Region input field")
-    @iOSXCUITFindBy(id = "TBU")
+    @iOSXCUITFindBy(id = "State/Region input field")
     private WebElement stateInputField;
 
     @AndroidFindBy(accessibility = "Zip Code* input field")
-    @iOSXCUITFindBy(id = "TBU")
+    @iOSXCUITFindBy(id = "Zip Code* input field")
     private WebElement zipInputField;
 
     @AndroidFindBy(accessibility = "Country* input field")
-    @iOSXCUITFindBy(id = "TBU")
+    @iOSXCUITFindBy(id = "Country* input field")
     private WebElement countryInputField;
 
     @AndroidFindBy(accessibility = "To Payment button")
-    @iOSXCUITFindBy(id = "TBU")
+    @iOSXCUITFindBy(id = "To Payment button")
     private WebElement toPaymentButton;
 
     public void enterFullName(String fullName) {

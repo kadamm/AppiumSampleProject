@@ -21,20 +21,21 @@ public class LoginScreen {
     }
 
     @AndroidFindBy(accessibility = "Username input field")
-    @iOSXCUITFindBy(id = "TBU")
+    @iOSXCUITFindBy(id = "Username input field")
     private WebElement emailField;
 
     @AndroidFindBy(accessibility = "Password input field")
-    @iOSXCUITFindBy(id = "TBU")
+    @iOSXCUITFindBy(id = "Password input field")
     private WebElement passwordField;
 
     @AndroidFindBy(accessibility = "Login button")
-    @iOSXCUITFindBy(id = "TBU")
+    @iOSXCUITFindBy(id = "Login button")
     private WebElement signInButton;
 
-    public void enterEmail(String emailId) {
+    public void enterEmail(String emailId) throws InterruptedException {
         this.mobileHelper.waitForElementToVisible(this.emailField);
         this.emailField.click();
+        Thread.sleep(2000);
         this.emailField.sendKeys(emailId);
     }
 
