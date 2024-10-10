@@ -26,34 +26,34 @@ public class ReviewYourOrderScreen {
     private WebElement productPrice;
 
     @AndroidFindBy(xpath = "//*[@content-desc='checkout delivery address']/child::android.widget.TextView[3]")
-    @iOSXCUITFindBy(id = "//*[@label='Delivery Address']/child::android.widget.TextView[3]")
+    @iOSXCUITFindBy(id = "//*[@name='Delivery Address']/child::android.widget.TextView[3]")
     private WebElement addressLine1;
     @AndroidFindBy(xpath = "//*[@content-desc='checkout delivery address']/child::android.widget.TextView[4]")
-    @iOSXCUITFindBy(id = "TBU")
+    @iOSXCUITFindBy(id = "//*[@name='checkout delivery address']/child::android.widget.TextView[4]")
     private WebElement addressLine2;
 
     @AndroidFindBy(xpath = "//*[@content-desc='checkout delivery address']/child::android.widget.TextView[4]")
-    @iOSXCUITFindBy(id = "TBU")
+    @iOSXCUITFindBy(id = "//*[@name='checkout delivery address']/child::android.widget.TextView[4]")
     private WebElement city;
 
     @AndroidFindBy(xpath = "//*[@content-desc='checkout delivery address']/child::android.widget.TextView[5]")
-    @iOSXCUITFindBy(id = "TBU")
+    @iOSXCUITFindBy(id = "//*[@name='checkout delivery address']/child::android.widget.TextView[5]")
     private WebElement stateAndZipCode;
 
     @AndroidFindBy(xpath = "//*[@content-desc='checkout payment info']/child::android.widget.TextView[2]")
-    @iOSXCUITFindBy(id = "TBU")
+    @iOSXCUITFindBy(id = "//*[@name='checkout payment info']/child::android.widget.TextView[2]")
     private WebElement paymentFullName;
 
     @AndroidFindBy(xpath = "//*[@content-desc='checkout payment info']/child::android.widget.TextView[3]")
-    @iOSXCUITFindBy(id = "TBU")
+    @iOSXCUITFindBy(id = "//*[@name='checkout payment info']/child::android.widget.TextView[3]")
     private WebElement paymentCardNumber;
 
     @AndroidFindBy(xpath = "//*[@content-desc='checkout payment info']/child::android.widget.TextView[4]")
-    @iOSXCUITFindBy(id = "TBU")
+    @iOSXCUITFindBy(id = "//*[@name='checkout payment info']/child::android.widget.TextView[4]")
     private WebElement expiryDate;
 
     @AndroidFindBy(accessibility = "Place Order button")
-    @iOSXCUITFindBy(id = "TBU")
+    @iOSXCUITFindBy(id = "Place Order button")
     private WebElement placeOrderButton;
 
 
