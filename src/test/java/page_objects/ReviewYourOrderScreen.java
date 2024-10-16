@@ -18,42 +18,42 @@ public class ReviewYourOrderScreen {
     }
 
     @AndroidFindBy(accessibility = "product label")
-    @iOSXCUITFindBy(id = "product label")
+    @iOSXCUITFindBy(accessibility = "product label")
     private WebElement productName;
 
     @AndroidFindBy(accessibility = "product price")
-    @iOSXCUITFindBy(id = "product price")
+    @iOSXCUITFindBy(accessibility = "product price")
     private WebElement productPrice;
 
     @AndroidFindBy(xpath = "//*[@content-desc='checkout delivery address']/child::android.widget.TextView[3]")
-    @iOSXCUITFindBy(id = "//*[@name='Delivery Address']/child::android.widget.TextView[3]")
+    @iOSXCUITFindBy(xpath = "//*[@name='checkout delivery address']/child::XCUIElementTypeStaticText[3]")
     private WebElement addressLine1;
     @AndroidFindBy(xpath = "//*[@content-desc='checkout delivery address']/child::android.widget.TextView[4]")
-    @iOSXCUITFindBy(id = "//*[@name='checkout delivery address']/child::android.widget.TextView[4]")
+    @iOSXCUITFindBy(xpath = "//*[@name='checkout delivery address']/child::XCUIElementTypeStaticText[4]")
     private WebElement addressLine2;
 
     @AndroidFindBy(xpath = "//*[@content-desc='checkout delivery address']/child::android.widget.TextView[4]")
-    @iOSXCUITFindBy(id = "//*[@name='checkout delivery address']/child::android.widget.TextView[4]")
+    @iOSXCUITFindBy(xpath = "//*[@name='checkout delivery address']/child::XCUIElementTypeStaticText[4]")
     private WebElement city;
 
     @AndroidFindBy(xpath = "//*[@content-desc='checkout delivery address']/child::android.widget.TextView[5]")
-    @iOSXCUITFindBy(id = "//*[@name='checkout delivery address']/child::android.widget.TextView[5]")
+    @iOSXCUITFindBy(xpath = "//*[@name='checkout delivery address']/child::XCUIElementTypeStaticText[5]")
     private WebElement stateAndZipCode;
 
     @AndroidFindBy(xpath = "//*[@content-desc='checkout payment info']/child::android.widget.TextView[2]")
-    @iOSXCUITFindBy(id = "//*[@name='checkout payment info']/child::android.widget.TextView[2]")
+    @iOSXCUITFindBy(xpath = "//*[@name='checkout payment info']/child::XCUIElementTypeStaticText[2]")
     private WebElement paymentFullName;
 
     @AndroidFindBy(xpath = "//*[@content-desc='checkout payment info']/child::android.widget.TextView[3]")
-    @iOSXCUITFindBy(id = "//*[@name='checkout payment info']/child::android.widget.TextView[3]")
+    @iOSXCUITFindBy(xpath = "//*[@name='checkout payment info']/child::XCUIElementTypeStaticText[3]")
     private WebElement paymentCardNumber;
 
     @AndroidFindBy(xpath = "//*[@content-desc='checkout payment info']/child::android.widget.TextView[4]")
-    @iOSXCUITFindBy(id = "//*[@name='checkout payment info']/child::android.widget.TextView[4]")
+    @iOSXCUITFindBy(xpath = "//*[@name='checkout payment info']/child::XCUIElementTypeStaticText[4]")
     private WebElement expiryDate;
 
     @AndroidFindBy(accessibility = "Place Order button")
-    @iOSXCUITFindBy(id = "Place Order button")
+    @iOSXCUITFindBy(accessibility = "Place Order button")
     private WebElement placeOrderButton;
 
 

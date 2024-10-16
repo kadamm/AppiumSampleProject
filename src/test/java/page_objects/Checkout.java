@@ -1,10 +1,12 @@
 package page_objects;
 
 import helpers.MobileHelper;
+import io.appium.java_client.AppiumBy;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import io.appium.java_client.pagefactory.iOSXCUITFindBy;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 
@@ -74,11 +76,14 @@ public class Checkout {
     }
 
     public void enterZipCode(String code) {
+        this.zipInputField.click();
         this.zipInputField.sendKeys(code);
     }
 
-    public void enterCountry(String country) {
+    public void enterCountry(String country) throws InterruptedException {
+        Thread.sleep(2000);
         this.countryInputField.sendKeys(country);
+        this.driver.findElement(new AppiumBy.ByAccessibilityId("Return")).click();
     }
 
     public void tapOnPaymentButton() {

@@ -21,7 +21,7 @@ public class PaymentMethodSteps {
         this.paymentMethodScreen =  new PaymentMethodScreen(this.driver);
     }
     @And("I proceed with payment with below details")
-    public void iProceedWithPaymentWithBelowDetails(DataTable dataTable) {
+    public void iProceedWithPaymentWithBelowDetails(DataTable dataTable) throws InterruptedException {
         String fullName = null, cardNumber = null, expiryDate = null, secureCode = null;
         List<Map<String, String>> paymentDetails =  dataTable.asMaps(String.class, String.class);
 

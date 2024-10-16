@@ -5,6 +5,7 @@ import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import io.appium.java_client.pagefactory.iOSXCUITFindBy;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 
@@ -35,7 +36,10 @@ public class LoginScreen {
     public void enterEmail(String emailId) throws InterruptedException {
         this.mobileHelper.waitForElementToVisible(this.emailField);
         this.emailField.click();
-        Thread.sleep(2000);
+        this.mobileHelper.waitForElementToVisible(this.driver.findElement(By.id("Return")));
+        Thread.sleep(4000);
+        this.emailField.sendKeys(emailId);
+        this.emailField.clear();
         this.emailField.sendKeys(emailId);
     }
 

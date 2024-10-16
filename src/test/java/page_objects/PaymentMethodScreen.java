@@ -1,6 +1,7 @@
 package page_objects;
 
 import helpers.MobileHelper;
+import io.appium.java_client.AppiumBy;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
@@ -42,6 +43,7 @@ public class PaymentMethodScreen {
 
     public void enterFullName(String name) {
         this.mobileHelper.waitForElementToVisible(this.fullNameInputField);
+        this.fullNameInputField.click();
         this.fullNameInputField.sendKeys(name);
     }
 
@@ -49,12 +51,16 @@ public class PaymentMethodScreen {
         this.cardNumberInputField.sendKeys(cardNumber);
     }
 
-    public void enterExpiryDate(String date) {
+    public void enterExpiryDate(String date) throws InterruptedException {
+        Thread.sleep(4000);
         this.expiryDateInputField.sendKeys(date);
     }
 
-    public void enterSecureCode(String code) {
+    public void enterSecureCode(String code) throws InterruptedException {
+        Thread.sleep(4000);
+        this.secureCodeInputField.click();
         this.secureCodeInputField.sendKeys(code);
+        this.driver.findElement(new AppiumBy.ByAccessibilityId("Full Name*")).click();
     }
 
     public void tapOnReviewOrderButton() {

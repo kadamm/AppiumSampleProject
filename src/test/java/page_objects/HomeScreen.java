@@ -46,7 +46,7 @@ public class HomeScreen {
     private WebElement addToCartButton;
 
     @AndroidFindBy(accessibility = "cart badge")
-    @iOSXCUITFindBy(id = "tab bar option cart")
+    @iOSXCUITFindBy(accessibility = "tab bar option cart")
     private WebElement cartButton;
 
     @AndroidFindBy(accessibility = "Proceed To Checkout button")
@@ -69,6 +69,9 @@ public class HomeScreen {
     }
     public void tapOnCartButton() {
         this.cartButton.click();
+        if (this.driver.getCapabilities().getPlatformName().toString().equalsIgnoreCase("iOS")) {
+            this.cartButton.click();
+        }
     }
 
     public String getMyCartProductName() {

@@ -25,7 +25,7 @@ public class CheckoutSteps {
     }
 
     @And("I started the checkout process with below details")
-    public void iStartedTheCheckoutProcessWithBelowDetails(DataTable dataTable) {
+    public void iStartedTheCheckoutProcessWithBelowDetails(DataTable dataTable) throws InterruptedException {
         String fullName = null, addressLine1 = null, addressLine2 = null, city = null, state = null, zipCode = null, country = null;
         List<Map<String, String>> checkoutDetails =  dataTable.asMaps(String.class, String.class);
 
