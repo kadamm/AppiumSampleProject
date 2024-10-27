@@ -34,6 +34,6 @@ public class BaseRunner extends AbstractTestNGCucumberTests {
 
     @AfterTest
     public void cleanup(){
-        this.driver.quit();
+        LocalDriverManager.quitAppiumDriver();
     }
 }
