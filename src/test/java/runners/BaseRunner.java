@@ -28,7 +28,13 @@ public class BaseRunner extends AbstractTestNGCucumberTests {
     @Parameters({"deviceName", "platformName", "platformVersion"})
     public void setup (String deviceName, String platformName, String platformVersion) throws MalformedURLException {
         if (LocalDriverManager.getAppiumDriver() == null){
-            this.driver = localDriverManager.createAppiumDriver(readPropertiesFiles.getConfigurationProperty("appium.url"), deviceName, platformName,platformVersion,readPropertiesFiles.getConfigurationProperty("app.package"), readPropertiesFiles.getConfigurationProperty("app.activity"));
+            this.driver = localDriverManager.
+                            createAppiumDriver1(readPropertiesFiles.getConfigurationProperty("appium.url"),
+                            deviceName,
+                            platformName,
+                            platformVersion,
+                            readPropertiesFiles.getConfigurationProperty("app.package"),
+                            readPropertiesFiles.getConfigurationProperty("app.activity"));
         }
     }
 

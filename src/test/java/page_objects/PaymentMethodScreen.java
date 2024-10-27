@@ -43,7 +43,6 @@ public class PaymentMethodScreen {
 
     public void enterFullName(String name) {
         this.mobileHelper.waitForElementToVisible(this.fullNameInputField);
-        this.fullNameInputField.click();
         this.fullNameInputField.sendKeys(name);
     }
 
@@ -52,18 +51,25 @@ public class PaymentMethodScreen {
     }
 
     public void enterExpiryDate(String date) throws InterruptedException {
-        Thread.sleep(4000);
+        //Thread.sleep(4000);
         this.expiryDateInputField.sendKeys(date);
     }
 
     public void enterSecureCode(String code) throws InterruptedException {
-        Thread.sleep(4000);
-        this.secureCodeInputField.click();
+        //Thread.sleep(4000);
         this.secureCodeInputField.sendKeys(code);
-        this.driver.findElement(new AppiumBy.ByAccessibilityId("Full Name*")).click();
+        if (driver.getCapabilities().getPlatformName().toString().equalsIgnoreCase("iOS")) {
+            this.expiryDateInputField.click();
+            this.driver.findElement(new AppiumBy.ByAccessibilityId("Return")).click();
+        }
     }
 
     public void tapOnReviewOrderButton() {
-        this.reviewOrderButton.click();
+        if (driver.getCapabilities().getPlatformName().toString().equalsIgnoreCase("Android")) {
+            this.reviewOrderButton.click();
+        }else {
+            this.reviewOrderButton.click();
+            this.reviewOrderButton.click();
+        }
     }
 }

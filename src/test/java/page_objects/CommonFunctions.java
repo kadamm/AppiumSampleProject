@@ -22,7 +22,7 @@ public class CommonFunctions {
         driver.executeScript("mobile: hideKeyboard");
     }
 
-    public void tap(AppiumDriver driver, WebElement element){
+    public static void tap(AppiumDriver driver, WebElement element){
         Point elementCenterLocation = getCenterOfElement(element);
         PointerInput finger1 = new PointerInput(PointerInput.Kind.TOUCH, "finger1");
         Sequence sequence = new Sequence(finger1, 1)
@@ -33,7 +33,7 @@ public class CommonFunctions {
         driver.perform(Collections.singletonList(sequence));
     }
 
-    private Point getCenterOfElement(WebElement element){
+    private static Point getCenterOfElement(WebElement element){
         Point location = element.getLocation();
         Dimension size = element.getSize();
         return new Point(location.getX() + size.getWidth() / 2, location.getY() + size.getHeight() / 2);
@@ -62,7 +62,7 @@ public class CommonFunctions {
         driver.executeScript("mobile: swipe", args);
     }
 
-    public void tapOnVisibleButtonText(AppiumDriver driver, String buttonVisibleText) {
+    public static void tapOnVisibleButtonText(AppiumDriver driver, String buttonVisibleText) {
         Map<String, Object> params = new HashMap<>();
         params.put("label", buttonVisibleText);
         params.put("ignorecase", "nocase");

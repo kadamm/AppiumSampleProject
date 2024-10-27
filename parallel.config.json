@@ -1,0 +1,25 @@
+{
+ "commonCapabilities": {
+   "isRealMobile": false,
+   "visual": true,
+   "console": true,
+   "devicelog": true
+ },
+ "deviceAndBuildCaps": [
+   {
+     "id": "1",
+     "name": "Test 1",
+     "platformName": "Android",
+     "platformVersion": "15",
+     "deviceName": "emulator-5554"
+   },
+   {
+     "id": "2",
+     "name": "Test 2",
+     "platformName": "iOS",
+     "platformVersion": "17.5",
+     "deviceName": "iPhone 15 Pro"
+   }
+ ]
+}
+

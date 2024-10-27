@@ -76,14 +76,15 @@ public class Checkout {
     }
 
     public void enterZipCode(String code) {
-        this.zipInputField.click();
         this.zipInputField.sendKeys(code);
     }
 
     public void enterCountry(String country) throws InterruptedException {
         Thread.sleep(2000);
         this.countryInputField.sendKeys(country);
-        this.driver.findElement(new AppiumBy.ByAccessibilityId("Return")).click();
+        if (driver.getCapabilities().getPlatformName().toString().equalsIgnoreCase("iOS")) {
+            this.driver.findElement(new AppiumBy.ByAccessibilityId("Return")).click();
+        }
     }
 
     public void tapOnPaymentButton() {

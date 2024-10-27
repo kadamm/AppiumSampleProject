@@ -18,11 +18,11 @@ public class SuccessScreen {
     }
 
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='Checkout Complete']")
-    @iOSXCUITFindBy(id = "TBU")
+    @iOSXCUITFindBy(accessibility = "Checkout Complete")
     private WebElement checkoutCompletedMessage;
 
     @AndroidFindBy(accessibility = "Continue Shopping button")
-    @iOSXCUITFindBy(id = "TBU")
+    @iOSXCUITFindBy(accessibility = "Continue Shopping button")
     private WebElement continueShoppingButton;
 
     public String getCheckSuccessMessage() {

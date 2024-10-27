@@ -1,6 +1,7 @@
 package page_objects;
 
 import helpers.MobileHelper;
+import io.appium.java_client.AppiumBy;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
@@ -35,17 +36,14 @@ public class LoginScreen {
 
     public void enterEmail(String emailId) throws InterruptedException {
         this.mobileHelper.waitForElementToVisible(this.emailField);
-        this.emailField.click();
-        this.mobileHelper.waitForElementToVisible(this.driver.findElement(By.id("Return")));
-        Thread.sleep(4000);
-        this.emailField.sendKeys(emailId);
-        this.emailField.clear();
         this.emailField.sendKeys(emailId);
     }
 
     public void enterPassword(String password) {
-        this.passwordField.click();
         this.passwordField.sendKeys(password);
+        if (driver.getCapabilities().getPlatformName().toString().equalsIgnoreCase("iOS")) {
+            this.driver.findElement(new AppiumBy.ByAccessibilityId("Return")).click();
+        }
     }
 
     public void tapSignInButton() {
