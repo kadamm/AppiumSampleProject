@@ -48,7 +48,7 @@ public class ReviewYourOrderSteps {
     }
 
     @When("I tap on the place order button")
-    public void iTapOnThePlaceOrderButton() {
+    public void iTapOnThePlaceOrderButton() throws InterruptedException {
         this.reviewYourOrderScreen.proceedToCheckoutButton();
     }
 }

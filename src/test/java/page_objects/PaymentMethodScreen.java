@@ -42,7 +42,7 @@ public class PaymentMethodScreen {
 
 
     public void enterFullName(String name) {
-        this.mobileHelper.waitForElementToVisible(this.fullNameInputField);
+        //this.mobileHelper.waitForElementToVisible(this.fullNameInputField);
         this.fullNameInputField.sendKeys(name);
     }
 

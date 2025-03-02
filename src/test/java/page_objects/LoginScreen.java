@@ -3,6 +3,8 @@ package page_objects;
 import helpers.MobileHelper;
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import io.appium.java_client.pagefactory.iOSXCUITFindBy;
@@ -47,6 +49,7 @@ public class LoginScreen {
     }
 
     public void tapSignInButton() {
+        CommonFunctions.tapOnVisibleButtonText(this.driver, "Login");
         this.signInButton.click();
     }
 }

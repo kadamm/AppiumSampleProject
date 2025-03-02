@@ -87,7 +87,8 @@ public class Checkout {
         }
     }
 
-    public void tapOnPaymentButton() {
+    public void tapOnPaymentButton() throws InterruptedException {
         this.toPaymentButton.click();
+        Thread.sleep(4000);
     }
 }

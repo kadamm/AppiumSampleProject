@@ -81,8 +81,9 @@ public class ReviewYourOrderScreen {
         return this.paymentCardNumber.getText();
     }
 
-    public void proceedToCheckoutButton() {
+    public void proceedToCheckoutButton() throws InterruptedException {
         this.placeOrderButton.click();
+        Thread.sleep(4000);
     }
 
 }
